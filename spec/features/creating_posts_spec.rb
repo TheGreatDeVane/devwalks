@@ -1,6 +1,10 @@
 require 'rails_helper.rb'
 # visit the root route
 feature 'Creating posts' do 
+	background do
+    user = create :user
+		sign_in_with user 
+	end
   scenario 'can create job' do
     visit '/'
 # click on a button to create a new post

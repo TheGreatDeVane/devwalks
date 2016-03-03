@@ -1,7 +1,12 @@
 require 'rails_helper'
 
 feature 'Index displays a list of posts' do
-  scenario 'the index displays the correct created job information' do
+	background do
+		user = create :user
+		
+		sign_in_with user 
+	end
+	scenario 'the index displays the correct created job information' do
     job_one = create(:post, caption: 'This is post one')
     job_two = create(:post, caption: 'this is the second post')
 
